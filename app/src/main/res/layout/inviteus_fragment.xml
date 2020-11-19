@@ -51,7 +51,7 @@
                 android:gravity="center"
                 android:text="Dr. Lisa Schaefer \n Keynotes... "
                 android:textColor="@color/colorPrimary"
-                android:textSize="40dp"
+                android:textSize="33dp"
                 android:textStyle="bold" />
 
             <View
@@ -67,19 +67,21 @@
                 android:layout_marginTop="12dp"
                 android:text="Making Steminism ..."
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="28dp"
+                android:textSize="25dp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvMessage1"
-                android:layout_width="match_parent"
+                android:layout_width="370dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="12dp"
                 android:layout_marginBottom="8dp"
                 android:baselineAligned="false"
                 android:text="ThinQ.tv founder..."
+                android:justificationMode="inter_word"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="24dp" />
+                android:textSize="21dp"
+                />
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -229,17 +231,17 @@
                 android:id="@+id/sendMessage"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="28dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="64dp"
-                android:layout_marginHorizontal="28dp"
-                android:clickable="true"
-                android:paddingVertical="8dp"
                 android:background="@color/colorPrimaryDark"
+                android:clickable="true"
                 android:gravity="center"
+                android:paddingVertical="8dp"
                 android:text="(602) 888-3089"
+                android:textColor="@color/ic_launcher_background"
                 android:textSize="18dp"
-                android:textStyle="bold"
-                android:textColor="@color/ic_launcher_background"/>
+                android:textStyle="bold" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
