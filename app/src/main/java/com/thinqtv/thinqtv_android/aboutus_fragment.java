@@ -128,7 +128,7 @@ public class aboutus_fragment extends Fragment {
         protected Void doInBackground(Void... voids) {
             URL url;
             try{
-                Document doc = Jsoup.connect("https://www.thinq.tv/getinvolved").get();
+                Document doc = Jsoup.connect("https://www.thinq.tv/aboutus").get();
 
                 //Get Title value
                 Elements bigTextElements = doc.getElementsByClass("maroon");

@@ -43,6 +43,8 @@ import java.net.URL;
 import java.net.URLConnection;
 
 import static com.facebook.react.bridge.UiThreadUtil.runOnUiThread;
+import static org.jitsi.meet.sdk.JitsiMeetActivityDelegate.onBackPressed;
+
 import com.thinqtv.thinqtv_android.data.UserRepository;
 
 public class profile_fragment extends Fragment {
@@ -164,7 +166,7 @@ public class profile_fragment extends Fragment {
         ((MainActivity)getActivity()).openFragment(welcome_fragment.newInstance());
     }
 
-    @Override
+  /*  @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
@@ -173,5 +175,14 @@ public class profile_fragment extends Fragment {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    } */
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                onBackPressed();
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
