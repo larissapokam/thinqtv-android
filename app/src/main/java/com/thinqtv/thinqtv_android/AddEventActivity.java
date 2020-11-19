@@ -46,10 +46,12 @@ public class AddEventActivity extends AppCompatActivity{
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.SECOND, 0);
         setContentView(R.layout.activity_add_event);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
+
         Button setTimeButton = findViewById(R.id.time);
         setTimeButton.setOnClickListener(view -> {
             DialogFragment newFragment = new TimePickerFragment((view1, hour, minute) -> {

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -15,6 +16,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -39,6 +43,7 @@ import java.net.URL;
 import java.net.URLConnection;
 
 import static com.facebook.react.bridge.UiThreadUtil.runOnUiThread;
+import com.thinqtv.thinqtv_android.data.UserRepository;
 
 public class profile_fragment extends Fragment {
 
@@ -54,7 +59,12 @@ public class profile_fragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
+       /* Toolbar toolbar = getView().findViewById(R.id.toolbar);
+        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+        ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true); */
     }
 
     @Override
@@ -67,6 +77,11 @@ public class profile_fragment extends Fragment {
     @Override
     public void onViewCreated (View view, Bundle savedInstanceState)
     {
+        Toolbar toolbar = getView().findViewById(R.id.toolbar);
+        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+        ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
         // Connect the Edit Profile button
         final Button browseScheduleBtn = getView().findViewById(R.id.edit_profileBtn);
         browseScheduleBtn.setOnClickListener(new View.OnClickListener() {
@@ -147,5 +162,16 @@ public class profile_fragment extends Fragment {
                     }
                 });
         ((MainActivity)getActivity()).openFragment(welcome_fragment.newInstance());
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                ((AppCompatActivity)getActivity()).finish(); //this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
