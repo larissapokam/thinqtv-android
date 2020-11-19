@@ -166,23 +166,20 @@ public class profile_fragment extends Fragment {
         ((MainActivity)getActivity()).openFragment(welcome_fragment.newInstance());
     }
 
-  /*  @Override
+  @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
         switch (item.getItemId()) {
+
             case android.R.id.home:
-                ((AppCompatActivity)getActivity()).finish(); //this.finish();
+                //getActivity().finish();
+                getActivity().onBackPressed();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
-        }
-    } */
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                onBackPressed();
         }
-        return super.onOptionsItemSelected(item);
+
     }
+
 }

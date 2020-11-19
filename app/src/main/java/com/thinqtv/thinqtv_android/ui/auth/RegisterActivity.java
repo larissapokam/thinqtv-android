@@ -2,6 +2,7 @@ package com.thinqtv.thinqtv_android.ui.auth;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -11,12 +12,15 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.thinqtv.thinqtv_android.MainActivity;
 import com.thinqtv.thinqtv_android.R;
 
 import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
+
+import static java.security.AccessController.getContext;
 
 public class RegisterActivity extends AppCompatActivity {
     private RegisterViewModel registerViewModel;
@@ -77,7 +81,9 @@ public class RegisterActivity extends AppCompatActivity {
                 setResult(Activity.RESULT_OK);
 
                 // Complete and destroy activity on a successful registration.
-                finish();
+                //finish();
+                registerButton.setOnClickListener(view -> goToMain());
+
             }
         });
 
@@ -124,5 +130,10 @@ public class RegisterActivity extends AppCompatActivity {
             // If multiple errors exist, show the first one.
             errorTextView.setText((Integer)errorList.get(0));
         }
+    }
+
+    private void goToMain() {
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
     }
 }
