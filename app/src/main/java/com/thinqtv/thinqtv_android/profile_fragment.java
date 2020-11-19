@@ -3,6 +3,7 @@ package com.thinqtv.thinqtv_android;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
@@ -63,10 +64,7 @@ public class profile_fragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-       /* Toolbar toolbar = getView().findViewById(R.id.toolbar);
-        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
-        ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true); */
+
     }
 
     @Override
@@ -79,6 +77,9 @@ public class profile_fragment extends Fragment {
     @Override
     public void onViewCreated (View view, Bundle savedInstanceState)
     {
+        ImageView img = (ImageView) getView().findViewById(R.id.imageView);
+        img.setImageResource(R.drawable.defaultimg);
+
         Toolbar toolbar = getView().findViewById(R.id.toolbar);
         ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
         ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();

@@ -37,6 +37,13 @@ public class ProfileSettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //Set default image
+       //imageView = (ImageView) findViewById(R.id.profile_image_view);
+      //  imageView.setImageResource(R.drawable.defaultimg);
+
+     //   ImageView imgB = (ImageView) findViewById(R.id.banner_image_view);
+        //imgB.setImageResource(R.drawable.bannerimg);
+
         setContentView(R.layout.activity_profile_settings);
         Toolbar toolbar = findViewById(R.id.toolbar);
        setSupportActionBar(toolbar);
